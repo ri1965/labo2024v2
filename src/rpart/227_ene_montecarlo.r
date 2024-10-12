@@ -9,7 +9,7 @@ require("primes")
 
 PARAM <- list()
 # reemplazar por las propias semillas
-PARAM$semilla_primigenia <- 102191
+PARAM$semilla_primigenia <- 501731
 PARAM$qsemillas <- 50
 
 # elegir SU dataset comentando/ descomentando
@@ -132,7 +132,7 @@ salidas
 tb_salida <- rbindlist(salidas)
 
 
-for( i in seq(10, 50, 10) )
+for( i in seq(10, 100, 10) )
 {
   cat( i, "\t", tb_salida[ 1:i, mean(ganancia_test)], "\n" )
 }
