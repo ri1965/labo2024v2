@@ -10,7 +10,7 @@ require("primes")
 PARAM <- list()
 # reemplazar por las propias semillas
 PARAM$semilla_primigenia <- 501731
-PARAM$qsemillas <- 100
+PARAM$qsemillas <- 50
 
 # elegir SU dataset comentando/ descomentando
 PARAM$dataset_nom <- "~/datasets/vivencial_dataset_pequeno.csv"
