@@ -193,11 +193,15 @@ for ( irank in ranks ) {
         Sys.chmod( "subir.sh", mode = "744", use_umask = TRUE)
 
         res <- system( "./subir.sh", intern= TRUE )
+        dir.create("~/.virtual_documents", showWarnings=FALSE)
+        cat( format(Sys.time(), "%Y%m%d %H%M%S"), "\n",
+             file = "~/.virtual_documents/z-activity.txt")
+
         Sys.sleep( 30 )  # espero para no saturar
         res <- "Successfully"  # pequena ayuda ...
 
         if( substr(res, 1, 12) == "Successfully" ) {
-          res <- system( paste0("~/install/list2 ", nom_submit), intern= TRUE )
+          res <- system( paste0("~/install/list ", nom_submit), intern= TRUE )
           cat( "res= ", res, "\n" )
           tb_ganancias_local[ envios == icorte, paste0("m", vsem) := as.numeric(res) ]
           tb_ganancias_local[ envios == icorte, gan_sum := gan_sum + as.numeric(res) ]
